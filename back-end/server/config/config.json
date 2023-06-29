@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "registro",
+    "password": "registro",
+    "database": "flota7",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "registro",
+    "password": "registro",
+    "database": "flota7",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "token_secret": "12345ABCDabcd.%_"
+}

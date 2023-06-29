@@ -1,0 +1,44 @@
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-container-expand uk-padding">        
+        <div>
+            Subcircuitos               
+            <a class="uk-link-heading uk-align-right@m" uk-icon="user" href="#">Nuevo Subcircuito </a>
+        </div>
+        <hr>
+        <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">
+            
+            <!-- panel -->
+            <div class="uk-width-1-1@l uk-overflow-auto">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="uk-table uk-table-striped uk-table-hover row-border hover">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Circuito</th>
+                        <th>Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of subcircuitos">
+                        <td>{{item.numero_subcircuito}}</td>
+                        <td>{{item.codigo_subcircuito}}</td>
+                        <td>{{item.nombre_subcircuito}}</td>
+                        <td>{{item.estado_subcircuito}}</td> 
+                        <td>{{item.circuito.nombre_circuito}}</td> 
+                        <td><a class="uk-link-heading" uk-icon="pencil" href="#" [routerLink]="['/admin/updatesubcircuito',item.id_subcircuito]" >Editar</a></td>                        
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                
+            </div>
+            <!-- /panel -->
+            
+        </div>
+        
+    </div>
+</div>
+<!-- /CONTENT -->

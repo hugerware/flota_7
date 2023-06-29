@@ -1,0 +1,93 @@
+* {
+	font-family: "Montserrat", sans-serif;
+}
+html {
+	background-color: #f8f8f8;
+	font-size: 16.5px;
+	font-weight: normal;
+	line-height: 1.6;
+	-webkit-text-size-adjust: 100%;
+	
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+#sidenav-col {
+    position: fixed;
+	width: 246px;
+	background: #245BA4;
+	border-radius: 0;
+	left: 0;
+  	top:0;  	
+	border-right: 1px solid #dedede;
+	overflow-x: hidden;
+  	overflow-y: auto;
+	transition: height 0.3s ease-out;
+}
+
+.logout-block {
+	width: 247px;
+}
+hr {
+	border-color: #cccccc !important;	
+}
+
+.menu .uk-nav > li > a {
+	padding: 15px 0;
+}
+.main .uk-container {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.sidebar-left {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 246px !important;
+	background: #245BA4;
+	border-radius: 0;
+	border-right: 1px solid #dedede;
+    overflow-x: hidden;
+  	overflow-y: auto;
+}
+.sidebar-left + .main {
+	padding-left: 246px;
+}
+@media (max-width: 640px) {
+	.sidebar-left + .main {
+		padding-left: 0;
+	}
+}
+.uk-offcanvas-bar {
+	width: 247px;
+	background: none;
+	padding: 0;
+	border-radius: 0;
+	border-right: 1px solid #dedede;
+}
+:not(.uk-offcanvas-flip).uk-offcanvas-container-animation {
+	left: 247px;
+}
+
+
+.uk-offcanvas-bar .uk-nav-default > li.uk-active > a {
+	color: #000 !important;
+}
+.uk-navbar-toggle {	
+	min-width: 50px;
+}
+
+
+
+.bar-bottom {
+	border-top: 1px solid rgba(255,255,255,0.07);
+	padding: 15px 0;
+   	background-color: #245BA4;
+   	position: relative;
+   	left: 0;
+   	right: 0;
+   	
+   	bottom: 0;
+   	width: 245px;
+    
+}

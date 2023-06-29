@@ -1,0 +1,44 @@
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-container-expand uk-padding">        
+        <div>
+            Distritos               
+            <a class="uk-link-heading uk-align-right@m" uk-icon="user" href="#">Nuevo Distrito </a>
+        </div>
+        <hr>
+        <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">
+            
+            <!-- panel -->
+            <div class="uk-width-1-1@l uk-overflow-auto">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="uk-table uk-table-striped uk-table-hover row-border hover">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Provincia</th>
+                        <th>Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of distritos">
+                        <td>{{item.numero_distrito}}</td>
+                        <td>{{item.codigo_distrito}}</td>
+                        <td>{{item.nombre_distrito}}</td>
+                        <td>{{item.estado_distrito}}</td> 
+                        <td>{{item.provincia.nombre_provincia}}</td> 
+                        <td><a class="uk-link-heading" uk-icon="pencil" href="#" [routerLink]="['/admin/updatedistrito',item.id_distrito]" >Editar</a></td>                        
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                
+            </div>
+            <!-- /panel -->
+            
+        </div>
+        
+    </div>
+</div>
+<!-- /CONTENT -->

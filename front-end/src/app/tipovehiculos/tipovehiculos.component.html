@@ -1,0 +1,40 @@
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-container-expand uk-padding">        
+        <div>
+            Tipo Vehiculos               
+            <a class="uk-link-heading uk-align-right@m" uk-icon="user" [routerLink]="['/admin/newtipovehiculo']" href="#">Nuevo Tipo Vehículo </a>
+        </div>
+        <hr>
+        <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">
+            
+            <!-- panel -->
+            <div class="uk-width-1-1@l uk-overflow-auto">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="uk-table uk-table-striped uk-table-hover row-border hover">
+                    <thead>
+                      <tr>                        
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th>Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of tipovehiculos">
+                        <td>{{item.nombre_tipovehiculo}}</td>
+                        <td>{{item.descripcion_tipovehiculo}}</td>                        
+                        <td>{{item.estado_tipovehiculo}}</td> 
+                        <td><a class="uk-link-heading" uk-icon="pencil" href="#" [routerLink]="['/admin/updatetipovehiculo',item.id_tipovehiculo]" >Editar</a></td>                        
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                
+            </div>
+            <!-- /panel -->
+            
+        </div>
+        
+    </div>
+</div>
+<!-- /CONTENT -->

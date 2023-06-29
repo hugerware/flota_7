@@ -1,0 +1,86 @@
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-container-expand uk-padding">        
+        <div>
+            Nuevo Funcionario
+            <a class="uk-link-heading uk-align-right@m" uk-icon="reply" [routerLink]="['/admin/funcionarios']" href="#">Volver </a>
+        </div>
+        <hr>        
+        <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">            
+            <!-- panel -->
+            <div class="uk-width-1-1@l uk-overflow-auto">
+                <form class="uk-grid-small uk-background-muted uk-padding-small" [formGroup]="formularioNew" (ngSubmit)="create()" uk-grid>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="nombres_funcionario">Nombres</label>
+                        <input class="uk-input" type="text" aria-label="50" formControlName='nombres_funcionario' id="nombres_funcionario" >
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="apellidos_funcionario">Apellidos</label>
+                        <input class="uk-input" type="text" aria-label="50" formControlName='apellidos_funcionario' id="apellidos_funcionario" >
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="cedula_funcionario">Cédula</label>
+                        <input class="uk-input" type="text" aria-label="50" formControlName='cedula_funcionario' id="cedula_funcionario" maxlength="10">
+                    </div>     
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="fnacimiento_funcionario">Fecha Nacimiento</label>
+                        <input class="uk-input" type="date" aria-label="50" formControlName='fnacimiento_funcionario' id="fnacimiento_funcionario" >
+                    </div>                                   
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="ciudad_funcionario">Ciudad</label>
+                        <input class="uk-input" type="text" aria-label="50" formControlName='ciudad_funcionario' id="ciudad_funcionario" >
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="celular_funcionario">Celular</label>
+                        <input class="uk-input" type="text" aria-label="50" formControlName='celular_funcionario' id="celular_funcionario" maxlength="10">
+                    </div>                    
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="tsangre_funcionario">Tipo de Sangre</label>
+                        <input class="uk-input" type="text" aria-label="50" formControlName='tsangre_funcionario' id="tsangre_funcionario" >
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="id_grado">Grado</label>
+                        <select class="uk-select" formControlName='id_grado' id="id_grado">
+                            
+                            <option *ngFor="let item of grados" [value]="item.id_grado" >{{ item.nombre_grado }}</option>                            
+                        </select>
+                    </div>
+                    <div class="uk-width-1-2@s">                        
+                        <label><input class="uk-checkbox" type="checkbox" formControlName='estado_funcionario'  [checked]="true"> Usuario Activo</label>
+                    </div>                    
+                    <div class="uk-width-1-2@s">                        
+                        <label ><input class="uk-checkbox" type="checkbox" formControlName='estado_usuario' id="estadoLogin" > El usuario puede loguearse?</label>
+                    </div>
+                    
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="login_usuario">Login</label>
+                        <input class="uk-input" type="text" aria-label="50" formControlName='login_usuario' id="login_usuario" >
+                    </div>                    
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="email_usuario">E-mail</label>
+                        <input class="uk-input" type="email" aria-label="50" formControlName='email_usuario' id="email_usuario"  >
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="password_usuario">Contraseña</label>
+                        <input class="uk-input" type="password" aria-label="50" formControlName='password_usuario' id="password_usuario"  >
+                    </div>
+                    <div class="uk-width-1-2@s">
+                        <label class="uk-form-label" for="pass_usuario">Confirme Contraseña</label>
+                        <input class="uk-input" type="password" aria-label="50" formControlName='pass_usuario' id="pass_usuario"  >
+                    </div>
+                    
+                    <div class="uk-margin-bottom">
+                        <button type="submit" [disabled]="!formularioNew.valid" class="uk-button uk-button-primary  uk-width-1-1">Actualizar</button>
+                    </div>
+                </form>
+               
+                  
+                
+            </div>
+            <!-- /panel -->
+            
+        </div>
+        
+    </div>
+</div>
+<!-- /CONTENT -->

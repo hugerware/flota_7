@@ -1,0 +1,135 @@
+<!-- LEFT BAR -->
+<aside id="sidenav-col" class="uk-visible@s uk-height-viewport uk-padding-vertical uk-padding-small sidebar-left uk-light">
+  <div>
+    <div class="uk-logo">
+      <img data-src="./assets/img/logo.jpeg"  alt="" uk-img>        
+    </div>
+    <hr>
+  </div>
+  <div class="uk-flex uk-flex-between uk-flex-column menu" uk-height-viewport="expand: true">
+      <div class="left-nav-wrap">
+          <ul class="uk-nav uk-nav-default uk-nav-parent-icon " data-uk-nav>
+            <li class="uk-nav-header">MANTENIMIENTOS</li>                
+            <li><a href="#"><span data-uk-icon="icon: file-edit" class="uk-margin-small-right"></span>Solicitud</a></li>
+            <li><a href="#"><span data-uk-icon="icon: album" class="uk-margin-small-right"></span>Recepción y registro</a></li>                
+            <li><a href="#"><span data-uk-icon="icon: file-text" class="uk-margin-small-right"></span>Orden de trabajo</a></li>
+            <li><a href="#"><span data-uk-icon="icon: cart" class="uk-margin-small-right"></span>Entrega de vehículo</a></li>                
+            <li class="uk-nav-header">ASIGNACIONES</li>                
+            <li><a href="#"><span data-uk-icon="icon: user" class="uk-margin-small-right"></span>Personal a Subcircuito</a></li>
+            <li><a href="#"><span data-uk-icon="icon: shrink" class="uk-margin-small-right"></span>Vehículo a Subcircuito</a></li>                
+            <li class="uk-nav-header">FLOTA VEHICULAR</li> 
+            <li><a title="Tipo Vehículos" [routerLink]="['/admin/tipovehiculos']" href="#">Tipo Vehículos</a></li>
+            <li><a title="Vehículos" [routerLink]="['/admin/vehiculos']" href="#">Vehículos</a></li>               
+            <li><a href="#"><span data-uk-icon="icon: file-edit" class="uk-margin-small-right"></span>Bitacora</a></li>
+            <li><a href="#"><span data-uk-icon="icon: file-edit" class="uk-margin-small-right"></span>Combustibles y Lubricantes</a></li>
+            <li><a href="#"><span data-uk-icon="icon: shrink" class="uk-margin-small-right"></span>Kilometraje</a></li>                
+            <li><a href="#"><span data-uk-icon="icon: shrink" class="uk-margin-small-right"></span>Matrícula</a></li>                
+              <li class="uk-nav-header">DEPENDENCIAS</li>                  
+                <li><a title="Distritos" [routerLink]="['/admin/distritos']" href="#">Distritos</a></li>
+                <li><a title="Circuitos" [routerLink]="['/admin/circuitos']" href="#">Circuitos</a></li>
+                <li><a title="Subcircuitos" [routerLink]="['/admin/subcircuitos']" href="#">Subcircuitos</a></li>                        
+              <li class="uk-nav-header">CONFIGURAR</li>  
+              <li class="uk-parent"><a href="#"><span data-uk-icon="icon: plus-circle" class="uk-margin-small-right"></span>Administrador</a>
+                <ul class="uk-nav-sub">
+                  <li><a title="Funcionarios" [routerLink]="['/admin/funcionarios']" href="#">Funcionarios</a></li>                        
+                  <li><a title="Roles" [routerLink]="['/admin/roles']" href="#">Roles</a></li>
+                  <li><a title="Grados" [routerLink]="['/admin/grados']" href="#">Grados</a></li>                                                                    
+                </ul>
+              </li>
+              
+          </ul>
+          <div class="bar-bottom">
+      <ul class="uk-subnav uk-flex uk-flex-center uk-child-width-1-5" data-uk-grid>
+        <li>
+          <a href="#" [routerLink]="['/admin']" class="uk-icon-link" data-uk-icon="icon: home" title="Inicio" data-uk-tooltip></a>
+        </li>					
+        <li>
+          <a href="#" class="uk-icon-link" data-uk-icon="icon: shrink"  title="Perfil" data-uk-tooltip></a>
+        </li>					
+        <li>
+          <a href="#" (click)="logout()"  class="uk-icon-link" data-uk-tooltip="Salir" data-uk-icon="icon: sign-out"></a>
+        </li>
+      </ul>
+    </div>
+      </div>                    
+  </div>      
+</aside>  
+<!-- /LEFT BAR -->
+
+<div class="main">
+  <header>
+    <nav class="uk-navbar-container uk-padding uk-padding-remove-vertical" style="background-color: #80342D;" uk-navbar="mode: click">
+      <div class="uk-navbar-left uk-light">
+        <div class="uk-navbar-item uk-padding-remove">
+          <div class="uk-hidden@s uk-margin-large-right">
+            <a uk-navbar-toggle-icon="" href="#offcanvas-sidebar" uk-toggle=""
+              class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon"></a>
+            <div class="mobile">
+              <a href="" class="uk-icon-close" uk-icon="icon: close; ratio: 1.2"></a>
+            </div>
+          </div>          
+        </div>  
+      </div>
+      <div class="uk-navbar-right uk-light">
+        <ul class="uk-navbar-nav">
+          <li><a href="#" data-uk-icon="icon:user" title="Perfil" data-uk-tooltip></a></li>            
+          <li><a href="#" (click)="logout()"  data-uk-icon="icon:  sign-out" title="Salir" data-uk-tooltip></a></li>          
+        </ul>
+      </div>
+    </nav>
+  </header>    
+</div>
+<div id="offcanvas-sidebar" uk-offcanvas="overlay: true; mode: push">
+  <div class="uk-offcanvas-bar uk-dark">
+    <aside class="uk-height-viewport uk-padding-vertical uk-padding-small sidebar-left">
+      
+      <div class="uk-flex uk-flex-between uk-flex-column menu" uk-height-viewport="expand: true">
+          <ul class="uk-nav uk-nav-default uk-text-left" data-uk-nav>
+              <li class="uk-nav-header">MANTENIMIENTOS</li>                
+              <li><a href="#"><span data-uk-icon="icon: file-edit" class="uk-margin-small-right"></span>Solicitud</a></li>
+              <li><a href="#"><span data-uk-icon="icon: expand" class="uk-margin-small-right"></span>Recepción y registro</a></li>                
+              <li><a href="#"><span data-uk-icon="icon: file-text" class="uk-margin-small-right"></span>Orden de trabajo</a></li>
+              <li><a href="#"><span data-uk-icon="icon: cart" class="uk-margin-small-right"></span>Entrega de vehículo</a></li>                
+              <li class="uk-nav-header">ASIGNACIONES</li>                
+              <li><a href="#"><span data-uk-icon="icon: user" class="uk-margin-small-right"></span>Personal a Subcircuito</a></li>
+              <li><a href="#"><span data-uk-icon="icon: shrink" class="uk-margin-small-right"></span>Vehículo a Subcircuito</a></li>                
+              <li class="uk-nav-header">FLOTA VEHICULAR</li>     
+              <li><a title="Tipo Vehículos" [routerLink]="['/admin/tipovehiculos']" href="#">Tipo Vehículos</a></li>
+              <li><a title="Vehículos" [routerLink]="['/admin/vehiculos']" href="#">Vehículos</a></li>          
+              <li><a href="#"><span data-uk-icon="icon: file-edit" class="uk-margin-small-right"></span>Bitacora</a></li>
+              <li><a href="#"><span data-uk-icon="icon: file-edit" class="uk-margin-small-right"></span>Combustibles y Lubricantes</a></li>
+              <li><a href="#"><span data-uk-icon="icon: shrink" class="uk-margin-small-right"></span>Kilometraje</a></li>                
+              <li><a href="#"><span data-uk-icon="icon: shrink" class="uk-margin-small-right"></span>Matrícula</a></li>                
+              <li class="uk-nav-header">DEPENDENCIAS</li>                  
+                <li><a title="Distritos" [routerLink]="['/admin/distritos']" href="#">Distritos</a></li>
+                <li><a title="Circuitos" [routerLink]="['/admin/circuitos']" href="#">Circuitos</a></li>
+                <li><a title="Subcircuitos" [routerLink]="['/admin/subcircuitos']" href="#">Subcircuitos</a></li>                        
+              <li class="uk-nav-header">CONFIGURAR</li>  
+              <li class="uk-parent"><a href="#"><span data-uk-icon="icon: plus-circle" class="uk-margin-small-right"></span>Administrador</a>
+                <ul class="uk-nav-sub">
+                  <li><a title="Funcionarios" [routerLink]="['/admin/funcionarios']" href="#">Funcionarios</a></li>                        
+                  <li><a title="Roles" [routerLink]="['/admin/roles']" href="#">Roles</a></li>
+                  <li><a title="Grados" [routerLink]="['/admin/grados']" href="#">Grados</a></li>                                                                    
+                </ul>
+              </li>
+                                       
+          </ul>
+          <div class="bar-bottom">
+      <ul class="uk-subnav uk-flex uk-flex-center uk-child-width-1-5" data-uk-grid>
+        <li>
+          <a href="#" [routerLink]="['/admin']" class="uk-icon-link" data-uk-icon="icon: home" title="Inicio" data-uk-tooltip></a>
+        </li>					
+        <li>
+          <a href="#" class="uk-icon-link" data-uk-icon="icon: shrink"  title="Perfil" data-uk-tooltip></a>
+        </li>					
+        <li>
+          <a href="#" (click)="logout()" class="uk-icon-link" data-uk-tooltip="Salir" data-uk-icon="icon: sign-out"></a>
+        </li>
+      </ul>
+    </div>          
+      </div>
+
+    </aside>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,40 @@
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-container-expand uk-padding">        
+        <div>
+            Grados               
+            <a class="uk-link-heading uk-align-right@m" uk-icon="user" [routerLink]="['/admin/newgrado']" href="#">Nuevo Grado </a>
+        </div>
+        <hr>
+        <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">
+            
+            <!-- panel -->
+            <div class="uk-width-1-1@l uk-overflow-auto">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="uk-table uk-table-striped uk-table-hover row-border hover">
+                    <thead>
+                      <tr>                        
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+                        <th>Estado</th>
+                        <th>Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of grados">
+                        <td>{{item.nombre_grado}}</td>
+                        <td>{{item.categoria_grado}}</td>                        
+                        <td>{{item.estado_grado}}</td> 
+                        <td><a class="uk-link-heading" uk-icon="pencil" href="#" [routerLink]="['/admin/updategrado',item.id_grado]" >Editar</a></td>                        
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                
+            </div>
+            <!-- /panel -->
+            
+        </div>
+        
+    </div>
+</div>
+<!-- /CONTENT -->

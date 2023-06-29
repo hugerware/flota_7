@@ -1,0 +1,69 @@
+<div class="uk-flex uk-flex-center uk-flex-middle  uk-height-viewport" data-uk-height-viewport>
+    
+    <div class="uk-width-large  ">
+        <!-- login -->
+        <img data-src="./assets/img/logo.jpeg" alt="" uk-img>  
+        <div *ngIf="error" class="uk-alert-danger uk-animation-shake" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p>{{error}}</p>
+        </div>       
+        <form class="toggle-class" [formGroup]="formularioLogin" (ngSubmit)="login()">
+            <fieldset class="uk-fieldset uk-background-muted uk-padding uk-padding-remove-bottom">
+                <div class="uk-margin ">
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon" data-uk-icon="icon: user"></span>
+                        <input class="uk-input uk-background-default uk-text-lighter" #login_usuario name="login_usuario"  formControlName="login_usuario" placeholder="Usuario" type="text">                                                               
+                    </div>
+                    <div class="uk-alert-danger" uk-alert *ngIf="formularioLogin.controls['login_usuario'].invalid && formularioLogin.controls['login_usuario'].dirty">                            
+                        <a class="uk-alert-close" uk-close></a>
+                        <p>Ingrese el nombre de usuario.</p>
+                    </div>      
+                </div>
+                <div class="uk-margin">
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon" data-uk-icon="icon: lock"></span>
+                        <input class="uk-input uk-background-default" #password_usuario name="password_usuario"  formControlName="password_usuario" placeholder="Contraseña" type="password">
+                    </div>
+                    <div class="uk-alert-danger" uk-alert *ngIf="formularioLogin.controls['password_usuario'].invalid && formularioLogin.controls['password_usuario'].dirty">                            
+                        <a class="uk-alert-close" uk-close></a>
+                        <p>Ingrese la contraseña.</p>
+                    </div>      
+                </div>		              			
+                <div class="uk-margin-bottom">
+                    <button type="submit" [disabled]="!formularioLogin.valid" class="uk-button uk-button-primary  uk-width-1-1">Ingresar</button>
+                </div>
+            </fieldset>
+        </form>
+        <!-- /login -->
+
+        <!-- recover password -->
+        <form class="toggle-class" [formGroup]="formularioPassword" (ngSubmit)="recuperar()" hidden>
+            <fieldset class="uk-fieldset uk-background-muted uk-padding uk-padding-remove-bottom">
+                <div class="uk-margin">
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon" data-uk-icon="icon: mail"></span>
+                        <input class="uk-input uk-background-default" placeholder="E-mail" #email_usuario name="email_usuario"  formControlName="email_usuario" type="text">
+                    </div>
+                    <div class="uk-alert-danger" uk-alert *ngIf="formularioPassword.controls['email_usuario'].invalid && formularioPassword.controls['email_usuario'].dirty">                            
+                        <a class="uk-alert-close" uk-close></a>
+                        <p>Ingrese un e-mail válido.</p>
+                    </div>      
+                </div>
+                <div class="uk-margin-bottom">
+                    <button type="submit" [disabled]="!formularioPassword.valid"  class="uk-button uk-button-primary  uk-width-1-1">Recuperar</button>
+                </div>
+            </fieldset>
+        </form>
+        <!-- /recover password -->
+        
+        <!-- action buttons -->
+        <div>
+            <div class="uk-text-center">
+                <a class="uk-link-reset uk-text-small toggle-class" data-uk-toggle="target: .toggle-class ;animation: uk-animation-fade">Olvidó su contraseña?</a>
+                <a class="uk-link-reset uk-text-small toggle-class" data-uk-toggle="target: .toggle-class ;animation: uk-animation-fade" hidden><span data-uk-icon="arrow-left"></span> Regresar</a>
+            </div>
+        </div>
+        <!-- action buttons -->
+    </div>
+</div>
+		

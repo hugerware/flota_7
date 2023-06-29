@@ -1,0 +1,40 @@
+<!-- CONTENT -->
+<div id="content" data-uk-height-viewport="expand: true">
+    <div class="uk-container uk-container-expand uk-padding">        
+        <div>
+            Roles               
+            <a class="uk-link-heading uk-align-right@m" uk-icon="user" [routerLink]="['/admin/newrol']" href="#">Nuevo Rol </a>
+        </div>
+        <hr>
+        <div class="uk-grid uk-grid-medium" data-uk-grid uk-sortable="handle: .sortable-icon">
+            
+            <!-- panel -->
+            <div class="uk-width-1-1@l uk-overflow-auto">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="uk-table uk-table-striped uk-table-hover row-border hover">
+                    <thead>
+                      <tr>                        
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Estado</th>
+                        <th>Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of roles">
+                        <td>{{item.nombre_rol}}</td>
+                        <td>{{item.descripcion_rol}}</td>                        
+                        <td>{{item.estado_rol}}</td> 
+                        <td><a class="uk-link-heading" uk-icon="pencil" href="#" [routerLink]="['/admin/updaterol',item.id_rol]" >Editar</a></td>                        
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                
+            </div>
+            <!-- /panel -->
+            
+        </div>
+        
+    </div>
+</div>
+<!-- /CONTENT -->
